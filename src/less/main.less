@@ -1,0 +1,213 @@
+@main-background-color: #fff;
+@main-text-color: #aaa;
+@main-text-font: 'Open Sans', sans-serif;
+
+@top-bar-height: 50px;
+
+@right-panel-width: 300px;
+@left-panel-width: 300px;
+
+// mixins --------------------------
+
+.absolute-position {
+  position: absolute;
+}
+
+.max-height {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+}
+
+.max-width {
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+
+.max {
+  .max-height;
+  .max-width;
+}
+
+.top-bar-height {
+  height: @top-bar-height
+}
+
+.top-bar-margin {
+  margin-top: @top-bar-height
+}
+
+.scrollbars {
+  overflow-y: auto;
+  overflow-x: auto;
+}
+
+.no-scrollbars {
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+
+.vertical-scrollbar {
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.horizontal-scrollbar {
+  overflow-y: hidden;
+  overflow-x: auto;
+}
+
+.bottom-edge {
+  border-bottom: 1px solid @main-text-color;
+}
+
+// ---------------------------------
+
+body {
+  background-color: @main-background-color;
+  color: @main-text-color;
+  font-family: @main-text-font;
+}
+
+// Main app ------------------------
+
+.app {
+  .max;
+}
+
+.app .top-container {
+  .max-width;
+  top: 0;
+  height: @top-bar-height;
+}
+
+.app .bottom-container {
+  .max;
+  margin-top: @top-bar-height;
+}
+
+// Top bar -------------------------
+
+.topbar {
+  .max;
+  background-color: #656565;
+}
+
+.projects-left-panel{
+  .max-height;
+  width: @right-panel-width;
+  border-right: solid @main-text-color 1px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.projects-right-panel{
+  .max;
+  margin-left: @right-panel-width;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.ui-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.ui-list li {
+  padding-left: 10px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  border-bottom: solid @main-text-color 1px;
+}
+
+.inner-container {
+  margin-left: @top-bar-height;
+  margin-right: @top-bar-height;
+  border: solid @main-text-color 1px;
+}
+
+.scenario-left-panel{
+  .max;
+  margin-right: @left-panel-width;
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+
+.scenario-right-panel{
+  .max-height;
+  right: 0;
+  width: @left-panel-width;
+  border-left: solid @main-text-color 1px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.box {
+  position: absolute;
+  background-color: #aaa;
+  color: #fff;
+  border: solid #aaa 1px;
+}
+
+.slots {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding-left: 0px;
+}
+
+.slot {
+  text-align: right;
+  margin-bottom: 2px;
+}
+
+.slot .label {
+  background-color: #f00;
+  padding: 4px;
+  border-radius: 10px;
+  font-size: 10px;
+}
+
+.content {
+  margin: 5px;
+}
+
+.selected-node {
+  border: solid red 1px;
+}
+
+.key-interceptor {
+  position: absolute;
+  top: -200px;
+}
+
+.node-select-box {
+  position: absolute;
+  border: red 2px solid;
+  pointer-events: none;
+}
+
+.button {
+  display: inline-block;
+  background-color: #aaa;
+  color: #000;
+  padding: 3px;
+  margin: 12px;
+}
+
+// --------------------- forms
+
+.name-form {
+  width: 100%;
+}
+
+.description-form {
+  width: 100%;
+  height: 120px;
+}
+
+.script-form {
+  width: 100%;
+  height: 200px;
+}
